@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${MYSQL_DB_HOST}
+    username: ${MYSQL_DB_USERNAME}
+    password: ${MYSQL_DB_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        search:
+          default:
+            directory_provider: filesystem
+            indexBase: index/default/
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 5000
